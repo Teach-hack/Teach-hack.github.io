@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">{ GK }</div>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="hero">
+      <h1>Hi, I'm Gyanendra Kumar 👋</h1>
+      <p>BCA Student | Aspiring Web Developer</p>
+      <p>I love building Websites and exploring new technologies.</p>
+      <div class="hero-btns">
+        <a href="#project" class="btn-primary">View Projects ⇩</a><a href="#contact" class="btn-secondary">Contact Me</a>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi, My name is Gyanendra Kumar. I am interested in new technologies.
+      </p>
+    </section>
+    <section id="skills">
+      <h2>My Skills</h2>
+      <div class="skill-grid">
+        <span class="skill-chip">HTML</span>
+        <span class="skill-chip">CSS3</span>
+        <span class="skill-chip">JavaScript</span>
+        <span class="skill-chip">Python</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Git</span>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form action="#" method="post" id="form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+        <label for="message">Message</label>
+        <textarea name="message" id="message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p id="form-msg"></p>
+
+    </section>
+    <footer>
+      <p>©️2026 Gyanendra Kumar</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
