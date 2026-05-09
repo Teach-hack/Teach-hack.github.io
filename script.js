@@ -1,18 +1,47 @@
-// 1. Form pakdo
 let form = document.getElementById("form");
-
-// 2. Message element pakdo
 let msg = document.getElementById("form-msg");
 
-// 3. Submit event suno
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let message = document.getElementById("message").value.trim();
 
     if (name === "" || email === "" || message === "") {
-        e.preventDefault();
         msg.innerHTML = "Please fill all fields!";
+        msg.style.color = "red";
+        return;
+    }
+
+    let data = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    try {
+        let response = await fetch("https://formspree.io/f/xeenrrwq", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            msg.innerHTML = "Message sent successfully ✅";
+            msg.style.color = "lime";
+
+            form.reset();
+        } else {
+            msg.innerHTML = "Something went wrong ❌";
+            msg.style.color = "red";
+        }
+
+    } catch (error) {
+        msg.innerHTML = "Network error ❌";
         msg.style.color = "red";
     }
 });
