@@ -7,20 +7,16 @@ let msg = document.getElementById("form-msg");
 // 3. Submit event suno
 form.addEventListener("submit", function(e) {
     
-    // 4. Default submit rokho
-
-    // 5. Values lo
+    form.addEventListener("submit", function(e) {
     let name = document.getElementById("name").value.trim();
     let email = document.getElementById("email").value.trim();
     let message = document.getElementById("message").value.trim();
 
-    // 6. Check karo
     if (name === "" || email === "" || message === "") {
+        e.preventDefault();  // ← sirf khali hone pe roko
         msg.innerHTML = "Please fill all fields!";
         msg.style.color = "red";
-    } else {
-        msg.innerHTML = "Message sent successfully!";
-        msg.style.color = "green";
-        form.reset(); // form saaf karo
     }
+    // else wala poora block hatao
+    // Formspree khud handle karega success
 });
