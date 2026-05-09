@@ -8,7 +8,6 @@ let msg = document.getElementById("form-msg");
 form.addEventListener("submit", function(e) {
     
     // 4. Default submit rokho
-    e.preventDefault();
 
     // 5. Values lo
     let name = document.getElementById("name").value.trim();
